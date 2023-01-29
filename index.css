@@ -67,10 +67,10 @@ body {
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
 }
-#desktop-header {
+header#desktop-header {
   display: none;
 }
-#mobile-header {
+header#mobile-header {
   /* background-color: var(--yellow); */
   background-color: var(--yellow);
   position: fixed;
@@ -79,6 +79,10 @@ body {
   height: var(--mobile-nav-height);
   z-index: 2;
   transition: all 0.5s ease-in-out;
+}
+
+header#mobile-header.bg-transparent{
+  background-color: transparent;
 }
 
 .mobile-navigation {
@@ -118,6 +122,10 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.hamburger .top-bun.bg-black {
+  background-color: var(--black);
+}
+
 .hamburger .bottom-bun {
   position: relative;
   width: 2rem;
@@ -127,6 +135,10 @@ body {
   background-color: var(--red);
   margin-top: 8px;
   transition: all 0.3s ease-in-out;
+}
+
+.hamburger .bottom-bun.bg-black {
+  background-color: var(--black);
 }
 
 .nav {
@@ -872,10 +884,10 @@ a:focus {
     background-attachment: fixed;
   }
 
-  #mobile-header {
+  header#mobile-header {
     display: none;
   }
-  #desktop-header {
+  header#desktop-header {
     display: block;
     background-color: var(--yellow);
     position: sticky;

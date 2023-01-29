@@ -5,25 +5,14 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-  //if>600px=desktop-mode, bgc use yellow. (by Susan)
-  if (window.screen.width < 880) {
-    if (
-      document.body.scrollTop > 400 ||
-      document.documentElement.scrollTop > 400
-    ) {
-      document.getElementById('mobile-header').style.backgroundColor =
-        'var(--yellow)';
-      document.getElementById('bun').style.backgroundColor = 'black';
-      document.getElementById('bun2').style.backgroundColor = 'black';
-    } else {
-      document.getElementById('mobile-header').style.backgroundColor =
-        'transparent';
-      document.getElementById('bun').style.backgroundColor = 'var(--red)';
-      document.getElementById('bun2').style.backgroundColor = 'var(--red)';
-    }
+  if (document.documentElement.scrollTop > 400) {
+    document.getElementById('mobile-header').classList.remove('bg-transparent');
+    document.getElementById('top-bun').classList.add('bg-black');
+    document.getElementById('bottom-bun').classList.add('bg-black');
   } else {
-    document.getElementById('desktop-header').style.backgroundColor =
-      'var(--yellow)';
+    document.getElementById('mobile-header').classList.add('bg-transparent');
+    document.getElementById('top-bun').classList.remove('bg-black');
+    document.getElementById('bottom-bun').classList.remove('bg-black');
   }
 }
 
